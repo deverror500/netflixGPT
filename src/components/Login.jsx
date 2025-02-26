@@ -8,7 +8,12 @@ import {
 import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
-import { AUTHTEXT, AUTH_ERRORS, BACKGROUND, USER_AVATAR } from "../utils/constants";
+import {
+  AUTHTEXT,
+  AUTH_ERRORS,
+  BACKGROUND,
+  USER_AVATAR,
+} from "../utils/constants";
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -107,15 +112,11 @@ const Login = () => {
     <div>
       <Header />
       <div className="absolute">
-        <img
-          src={BACKGROUND}
-          alt="background"
-        />
+        <img src={BACKGROUND} alt="background" />
       </div>
       <form
         onSubmit={(e) => e.preventDefault()}
-        className="absolute p-12 bg-black w-3/12 my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80"
-      >
+        className="absolute p-12 bg-black w-3/12 my-36 mx-auto right-0 left-0 text-white rounded-lg bg-opacity-80">
         <h1 className="font-bold text-3xl py-4">
           {isSignInForm ? "Sign In" : "Sign Up"}
         </h1>
@@ -162,8 +163,7 @@ const Login = () => {
         )}
         <button
           className="p-4 my-6 bg-red-600 w-full rounded-lg"
-          onClick={handleButtonClick}
-        >
+          onClick={handleButtonClick}>
           {isSignInForm ? "Sign In" : "Sign Up"}
         </button>
         {authError && (
@@ -172,15 +172,13 @@ const Login = () => {
         {isSignInForm ? (
           <p
             className="py-4 cursor-pointer font-semibold hover:underline"
-            onClick={toggleSignInForm}
-          >
+            onClick={toggleSignInForm}>
             {AUTHTEXT.SIGN_UP}
           </p>
         ) : (
           <p
             className="py-4 cursor-pointer font-semibold hover:underline"
-            onClick={toggleSignInForm}
-          >
+            onClick={toggleSignInForm}>
             {AUTHTEXT.SIGN_IN}
           </p>
         )}
